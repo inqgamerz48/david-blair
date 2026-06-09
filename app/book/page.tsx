@@ -52,13 +52,25 @@ function BookingForm() {
   };
 
   return (
-    <div className="w-full max-w-xl mx-auto bg-white rounded-none border border-primary/5 shadow-premium overflow-hidden relative">
+    <div className="w-full max-w-xl mx-auto bg-pageBg/85 backdrop-blur-md rounded-none border border-primary/10 shadow-premium overflow-hidden relative">
+      {/* Cracked Glass Frosting Lines Overlay */}
+      <div className="absolute inset-0 pointer-events-none z-0 opacity-[0.04] text-primary">
+        <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <line x1="0" y1="20" x2="35" y2="45" stroke="currentColor" strokeWidth="0.25" />
+          <line x1="35" y1="45" x2="100" y2="30" stroke="currentColor" strokeWidth="0.25" />
+          <line x1="35" y1="45" x2="55" y2="100" stroke="currentColor" strokeWidth="0.25" />
+          <line x1="75" y1="0" x2="60" y2="50" stroke="currentColor" strokeWidth="0.25" />
+          <line x1="60" y1="50" x2="0" y2="65" stroke="currentColor" strokeWidth="0.25" />
+          <line x1="60" y1="50" x2="100" y2="75" stroke="currentColor" strokeWidth="0.25" />
+        </svg>
+      </div>
+
       {/* Top Banner Accent */}
-      <div className="h-3 bg-gradient-to-r from-primary to-accent" />
+      <div className="h-3 bg-gradient-to-r from-primary to-accent relative z-10" />
 
       {/* Success View */}
       {isSubmitted ? (
-        <div className="p-8 md:p-12 flex flex-col items-center justify-center text-center min-h-[450px] space-y-6">
+        <div className="p-8 md:p-12 flex flex-col items-center justify-center text-center min-h-[450px] space-y-6 relative z-10">
           {/* Animated checkmark container */}
           <div className="w-24 h-24 rounded-none bg-primary-light flex items-center justify-center text-primary relative">
             <svg
@@ -102,7 +114,7 @@ function BookingForm() {
         </div>
       ) : (
         /* Form View */
-        <div className="p-8 md:p-12">
+        <div className="p-8 md:p-12 relative z-10">
           {/* Form Header */}
           <div className="text-center mb-8 space-y-2">
             <span className="px-4 py-1.5 bg-primary/5 border border-primary/10 text-primary text-xs font-bold rounded-none uppercase tracking-wider">
@@ -209,7 +221,7 @@ function BookingForm() {
                   <input
                     type="date"
                     required
-                    className="w-full pl-11 pr-4 py-3 bg-pageBg border border-primary/5 rounded-none focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary text-sm font-medium transition-all"
+                    className="w-full pl-11 pr-4 py-3 bg-pageBg/50 border border-primary/10 rounded-none focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary text-sm font-medium transition-all custom-datepicker cursor-pointer"
                   />
                 </div>
               </motion.div>

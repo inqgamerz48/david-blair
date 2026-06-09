@@ -34,3 +34,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# reference site downloaded files
+Demo PreSchool – Education WordPress Theme*
+Demo PreSchool – Education WordPress Theme_files/
