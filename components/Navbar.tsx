@@ -99,7 +99,7 @@ export default function Navbar() {
           })}
 
           {/* Premium Theme Selector Toggler (Skeuomorphic border / glassmorphic dock) */}
-          <div className="flex items-center gap-2 bg-white/40 dark:bg-black/10 backdrop-blur-md p-1.5 rounded-full border border-primary/10 shadow-inner">
+          <div className="flex items-center gap-2 bg-white/40 dark:bg-black/10 backdrop-blur-md p-1.5 rounded-none border border-primary/10 shadow-inner">
             <Palette className="w-4 h-4 text-textSecondary mr-0.5 ml-1 opacity-70" />
             <div className="flex gap-1.5">
               {themes.map((t) => {
@@ -108,15 +108,15 @@ export default function Navbar() {
                   <motion.button
                     key={t.id}
                     onClick={() => setTheme(t.id)}
-                    className={`w-5 h-5 rounded-full ${t.color} relative flex items-center justify-center cursor-pointer transition-shadow`}
-                    whileHover={{ scale: 1.2 }}
-                    whileTap={{ scale: 0.9 }}
+                    className={`w-5 h-5 rounded-none ${t.color} relative flex items-center justify-center cursor-pointer transition-shadow`}
+                    whileHover={{ scale: 1.15 }}
+                    whileTap={{ scale: 0.95 }}
                     title={`Switch to ${t.name}`}
                   >
                     {isActive && (
                       <motion.span
                         layoutId="activeTheme"
-                        className="absolute inset-[-3px] border-2 border-primary rounded-full"
+                        className="absolute inset-[-3px] border-2 border-primary rounded-none"
                         transition={{ type: "spring", stiffness: 300, damping: 20 }}
                       />
                     )}
@@ -128,9 +128,9 @@ export default function Navbar() {
 
           <Link href="/book">
             <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-6 py-2.5 bg-primary text-white text-[15px] font-semibold rounded-full shadow-premium hover:bg-opacity-95 hover:shadow-premiumHover transition-all"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="px-6 py-2.5 bg-primary text-white text-[15px] font-semibold rounded-none border border-primary shadow-premium hover:bg-[#253A60] transition-colors duration-300"
             >
               Book a Session
             </motion.button>
@@ -186,7 +186,7 @@ export default function Navbar() {
                     <button
                       key={t.id}
                       onClick={() => setTheme(t.id)}
-                      className={`w-6 h-6 rounded-full ${t.color} relative flex items-center justify-center ${
+                      className={`w-6 h-6 rounded-none ${t.color} relative flex items-center justify-center ${
                         theme === t.id ? "ring-2 ring-primary ring-offset-2" : ""
                       }`}
                       aria-label={`Switch to ${t.name}`}
@@ -196,7 +196,7 @@ export default function Navbar() {
               </div>
 
               <Link href="/book" onClick={handleLinkClick} className="w-full pt-2">
-                <button className="w-full py-3 bg-primary text-white font-semibold rounded-full shadow-premium">
+                <button className="w-full py-3 bg-primary text-white font-semibold rounded-none border border-primary shadow-premium hover:bg-[#253A60] transition-colors duration-300">
                   Book a Session
                 </button>
               </Link>
