@@ -73,7 +73,7 @@ export default function Homepage() {
     <div className="w-full relative overflow-hidden bg-pageBg">
       
       {/* ================= HERO SECTION ================= */}
-      <section className="relative py-20 lg:py-28 overflow-hidden min-h-[80vh] flex items-center">
+      <section className="relative py-20 lg:py-28 overflow-hidden min-h-[80vh] flex items-center bg-pageBg">
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
           {/* Left Column: Headline details */}
           <motion.div
@@ -141,7 +141,7 @@ export default function Homepage() {
       </section>
 
       {/* ================= STATS ROW ================= */}
-      <section className="bg-white border-y border-primary/5 py-10 relative z-10 shadow-premium">
+      <section className="bg-altBg border-y border-primary/5 py-10 relative z-10 shadow-premium">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             <StatCard number="500+" label="Students Taught" colorClass="text-primary" />
@@ -153,7 +153,7 @@ export default function Homepage() {
       </section>
 
       {/* ================= ABOUT SECTION ================= */}
-      <section className="py-24 bg-white relative">
+      <section className="py-24 bg-pageBg relative">
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           
           {/* Left Column: Traditional Frame visual */}
@@ -225,7 +225,7 @@ export default function Homepage() {
       </section>
 
       {/* ================= CLASSES SECTION ================= */}
-      <section className="py-24 bg-pageBg relative">
+      <section className="py-24 bg-altBg relative">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           
           <div className="text-center max-w-2xl mx-auto mb-16">
@@ -306,7 +306,7 @@ export default function Homepage() {
       </section>
 
       {/* ================= TUTORS SECTION ================= */}
-      <section className="py-24 bg-white relative">
+      <section className="py-24 bg-pageBg relative">
         {/* Subtle decorative grid lines */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(27,43,75,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(27,43,75,0.015)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 

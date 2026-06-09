@@ -8,8 +8,10 @@
   --accent: 245 166 35;
   --brandNavy: 27 43 75;
   --pageBg: 255 255 255;
+  --altBg: 246 246 246;
+  --creamBg: 250 250 247;
   --roseSplit: 250 250 247;
-  --skySplit: 255 255 255;
+  --skySplit: 246 246 246;
 }
 
 .theme-oxford {
@@ -18,8 +20,10 @@
   --accent: 245 166 35;
   --brandNavy: 27 43 75;
   --pageBg: 255 255 255;
+  --altBg: 246 246 246;
+  --creamBg: 250 250 247;
   --roseSplit: 250 250 247;
-  --skySplit: 255 255 255;
+  --skySplit: 246 246 246;
 }
 
 .theme-cambridge {
@@ -28,6 +32,8 @@
   --accent: 212 175 55;
   --brandNavy: 27 43 75;
   --pageBg: 250 250 247;
+  --altBg: 240 240 235;
+  --creamBg: 250 250 247;
   --roseSplit: 255 255 255;
   --skySplit: 250 250 247;
 }

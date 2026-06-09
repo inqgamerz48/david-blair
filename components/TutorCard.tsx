@@ -33,7 +33,7 @@ export default function TutorCard({ tutor, index }: TutorCardProps) {
       viewport={{ once: true }}
       transition={{ duration: 0.8, delay: index * 0.1, ease: "easeInOut" }}
       whileHover={{ y: -6 }}
-      className="bg-white rounded-3xl p-8 border border-primary/5 shadow-premium shadow-premium-box flex flex-col items-center text-center relative overflow-hidden group"
+      className="bg-white rounded-none p-8 border border-primary/5 shadow-premium shadow-premium-box flex flex-col items-center text-center relative overflow-hidden group"
     >
       {/* Background shape hover reveal */}
       <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary/5 to-accent/5 rounded-bl-full transition-transform duration-500 group-hover:scale-150 pointer-events-none" />
@@ -55,7 +55,7 @@ export default function TutorCard({ tutor, index }: TutorCardProps) {
       </div>
 
       {/* Experience Badge */}
-      <span className={`px-4 py-1.5 rounded-full text-xs font-bold border uppercase tracking-wider ${badgeColors[tutor.experienceColor]} mb-4 z-10`}>
+      <span className={`px-4 py-1.5 rounded-none text-xs font-bold border uppercase tracking-wider ${badgeColors[tutor.experienceColor]} mb-4 z-10`}>
         {tutor.experience} Experience
       </span>
 

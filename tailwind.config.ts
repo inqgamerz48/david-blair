@@ -9,6 +9,8 @@ const config: Config = {
     extend: {
       colors: {
         pageBg: "rgb(var(--pageBg) / <alpha-value>)",
+        altBg: "rgb(var(--altBg) / <alpha-value>)",
+        creamBg: "rgb(var(--creamBg) / <alpha-value>)",
         primary: {
           DEFAULT: "rgb(var(--primary) / <alpha-value>)",
           light: "rgb(var(--primary-light) / <alpha-value>)",

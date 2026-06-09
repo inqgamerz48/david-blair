@@ -26,12 +26,7 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden w-full">
-      {/* Background Split: left soft rose, right soft sky */}
-      <div className="absolute inset-0 flex flex-col lg:flex-row pointer-events-none z-0">
-        <div className="w-full lg:w-1/2 bg-roseSplit" />
-        <div className="w-full lg:w-1/2 bg-skySplit" />
-      </div>
+    <section className="py-24 bg-creamBg relative overflow-hidden w-full">
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         {/* Section Header */}

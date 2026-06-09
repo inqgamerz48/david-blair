@@ -58,7 +58,7 @@ export default function TestimonialSection() {
   }, [activeIndex]);
 
   return (
-    <section ref={containerRef} className="py-24 bg-skySplit border-y border-accent/5 relative overflow-hidden">
+    <section ref={containerRef} className="py-24 bg-altBg border-y border-primary/5 relative overflow-hidden">
       {/* Decorative Blob */}
       <div className="absolute top-1/2 -right-40 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
 

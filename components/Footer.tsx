@@ -5,7 +5,7 @@ import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-brandNavy text-gray-300 pt-16 pb-8 border-t border-white/5 relative overflow-hidden">
+    <footer className="bg-[#111111] text-gray-300 pt-16 pb-8 border-t border-white/5 relative overflow-hidden">
       {/* Background visual element - subtle dark gradient */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(245,166,35,0.02),transparent_40%)] pointer-events-none" />
 
