@@ -13,17 +13,17 @@ interface TutorCardProps {
 export default function TutorCard({ tutor, index }: TutorCardProps) {
   // Map experienceColor to CSS classes
   const badgeColors = {
-    green: "bg-primary/10 text-primary border-primary/20", // Purple
-    pink: "bg-badgePink/10 text-badgePink border-badgePink/20", // Pink
-    blue: "bg-badgeBlue/10 text-badgeBlue border-badgeBlue/20", // Blue
-    red: "bg-accent/10 text-accent border-accent/20", // Indigo
+    green: "bg-primary/10 text-primary border-primary/20",
+    pink: "bg-accent/10 text-accent border-accent/20",
+    blue: "bg-primary/5 text-primary border-primary/10",
+    red: "bg-accent/15 text-accent border-accent/30",
   };
 
   const gradientColors = {
-    green: "from-primary to-accent", // Purple-Indigo
-    pink: "from-badgePink to-rose-400", // Pink-Rose
-    blue: "from-badgeBlue to-cyan-400", // Blue-Cyan
-    red: "from-accent to-primary", // Indigo-Purple
+    green: "from-[#1B2B4B] to-[#2A3D64]",
+    pink: "from-[#F5A623] to-[#E09310]",
+    blue: "from-[#1B2B4B] to-[#F5A623]",
+    red: "from-[#D4AF37] to-[#B8860B]",
   };
 
   return (
@@ -31,8 +31,8 @@ export default function TutorCard({ tutor, index }: TutorCardProps) {
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      whileHover={{ y: -6, scale: 1.02 }}
+      transition={{ duration: 0.8, delay: index * 0.1, ease: "easeInOut" }}
+      whileHover={{ y: -6 }}
       className="bg-white rounded-3xl p-8 border border-primary/5 shadow-premium shadow-premium-box flex flex-col items-center text-center relative overflow-hidden group"
     >
       {/* Background shape hover reveal */}
@@ -44,11 +44,11 @@ export default function TutorCard({ tutor, index }: TutorCardProps) {
         <div className={`absolute inset-0 rounded-full bg-gradient-to-br ${gradientColors[tutor.experienceColor]} opacity-20 blur-xl scale-110 group-hover:scale-125 transition-all duration-500`} />
         
         {/* Circular photo placeholder with colored gradient background */}
-        <div className={`w-32 h-32 rounded-full bg-gradient-to-br ${gradientColors[tutor.experienceColor]} border-2 border-white shadow-premium flex flex-col items-center justify-center relative overflow-hidden z-10 group-hover:scale-105 transition-transform duration-500`}>
+        <div className={`w-32 h-32 rounded-full bg-gradient-to-br ${gradientColors[tutor.experienceColor]} border-2 border-white shadow-premium flex flex-col items-center justify-center relative overflow-hidden z-10 transition-transform duration-500`}>
           {/* Avatar Icon */}
           <GraduationCap className="w-10 h-10 text-white opacity-20 group-hover:scale-110 transition-transform duration-300 mb-1" />
           {/* Initials */}
-          <span className="text-3xl font-black uppercase tracking-wider text-white select-none">
+          <span className="text-3xl font-bold uppercase tracking-wider text-white select-none">
             {tutor.name.split(" ").map(n => n[0]).join("")}
           </span>
         </div>
@@ -60,15 +60,15 @@ export default function TutorCard({ tutor, index }: TutorCardProps) {
       </span>
 
       {/* Tutor Info */}
-      <h3 className="text-xl font-bold text-textPrimary mb-1 group-hover:text-primary transition-colors">
+      <h3 className="text-xl font-serif font-bold text-textPrimary mb-1 group-hover:text-primary transition-colors">
         {tutor.name}
       </h3>
-      <p className="text-sm font-semibold text-textSecondary uppercase tracking-widest mb-4">
+      <p className="text-xs font-semibold text-textSecondary uppercase tracking-widest mb-4">
         {tutor.title}
       </p>
 
       {/* Bio */}
-      <p className="text-sm text-textSecondary leading-relaxed line-clamp-2 px-2 mb-6">
+      <p className="text-sm text-textSecondary leading-relaxed line-clamp-2 px-2 mb-6 font-normal">
         {tutor.bio}
       </p>
 

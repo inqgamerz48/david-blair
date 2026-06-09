@@ -67,10 +67,10 @@ export default function TestimonialSection() {
           
           {/* Left Column - Headline & Stats */}
           <div className="lg:col-span-5 space-y-6">
-            <span className="px-4 py-1.5 bg-badgePink text-white text-xs font-bold rounded-full uppercase tracking-wider">
+            <span className="px-4 py-1.5 bg-primary/5 border border-primary/10 text-primary text-xs font-bold rounded-none uppercase tracking-wider">
               TESTIMONIALS
             </span>
-            <h2 className="text-4xl md:text-5xl font-black text-brandNavy tracking-tight leading-tight">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-brandNavy tracking-tight leading-tight">
               Voices From Our Happy Parents
             </h2>
             <p className="text-textSecondary leading-relaxed text-base font-normal">
@@ -79,12 +79,12 @@ export default function TestimonialSection() {
             
             {/* Massive Stats Display */}
             <div className="pt-6 border-t border-primary/10 flex items-center gap-6">
-              <span ref={percentRef} className="text-6xl md:text-7xl font-black text-primary tracking-tight">
+              <span ref={percentRef} className="text-6xl md:text-7xl font-serif font-bold text-primary tracking-tight">
                 0%
               </span>
               <div>
-                <p className="text-lg font-bold text-textPrimary leading-tight">Parent Satisfaction Rate</p>
-                <p className="text-sm text-textSecondary mt-0.5">Based on quarterly feedback surveys</p>
+                <p className="text-lg font-serif font-bold text-textPrimary leading-tight">Parent Satisfaction Rate</p>
+                <p className="text-sm text-textSecondary mt-0.5 font-normal">Based on quarterly feedback surveys</p>
               </div>
             </div>
           </div>
@@ -111,13 +111,13 @@ export default function TestimonialSection() {
                       scale: 1 - offset * 0.04,
                       opacity: 1 - offset * 0.3,
                     }}
-                    transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                    className={`bg-white rounded-3xl p-8 md:p-10 border border-primary/5 shadow-premium absolute top-0 left-0 right-0 cursor-pointer origin-top-left transition-shadow duration-300 ${
-                      isSelected ? "ring-2 ring-primary/30" : "hover:border-primary/20"
+                    transition={{ duration: 0.6, ease: "easeInOut" }}
+                    className={`bg-white rounded-none p-8 md:p-10 border border-primary/5 shadow-premium absolute top-0 left-0 right-0 cursor-pointer origin-top-left transition-shadow duration-300 ${
+                      isSelected ? "border-2 border-primary" : "hover:border-primary/20"
                     }`}
                   >
                     <div className="flex items-center justify-between mb-6">
-                      <div className="w-12 h-12 rounded-2xl bg-primary-light flex items-center justify-center text-primary">
+                      <div className="w-12 h-12 rounded-none bg-primary-light flex items-center justify-center text-primary">
                         <Quote className="w-6 h-6 fill-current" />
                       </div>
                       <span className="text-xs font-semibold text-textSecondary uppercase tracking-widest">
@@ -130,7 +130,7 @@ export default function TestimonialSection() {
                     </p>
 
                     <div>
-                      <h4 className="text-textPrimary font-bold text-base">{testimonial.author}</h4>
+                      <h4 className="text-textPrimary font-serif font-bold text-base">{testimonial.author}</h4>
                       <p className="text-textSecondary text-xs font-semibold uppercase tracking-wider mt-0.5">
                         {testimonial.role}
                       </p>
@@ -146,7 +146,7 @@ export default function TestimonialSection() {
                 <button
                   key={idx}
                   onClick={() => setActiveIndex(idx)}
-                  className={`w-3.5 h-3.5 rounded-full transition-all duration-300 ${
+                  className={`w-3.5 h-3.5 rounded-none transition-all duration-300 ${
                     activeIndex === idx ? "bg-primary w-8" : "bg-primary/20 hover:bg-primary/40"
                   }`}
                   aria-label={`Go to testimonial ${idx + 1}`}

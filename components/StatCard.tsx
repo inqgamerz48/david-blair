@@ -40,7 +40,7 @@ export default function StatCard({ number, label, colorClass }: StatCardProps) {
     >
       <span
         ref={numberRef}
-        className={`text-5xl md:text-6xl font-black ${colorClass} tracking-tight tabular-nums`}
+        className={`text-5xl md:text-6xl font-serif font-bold ${colorClass} tracking-tight tabular-nums`}
       >
         0{suffix}
       </span>

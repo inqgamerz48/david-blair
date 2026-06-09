@@ -25,11 +25,12 @@ const config: Config = {
         textSecondary: "#6B7280",
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "sans-serif"],
+        sans: ["var(--font-dm-sans)", "sans-serif"],
+        serif: ["var(--font-playfair)", "serif"],
       },
       boxShadow: {
-        premium: "0 4px 24px rgba(124, 58, 237, 0.08)",
-        premiumHover: "0 12px 30px rgba(124, 58, 237, 0.15)",
+        premium: "0 4px 20px rgba(27, 43, 75, 0.03)",
+        premiumHover: "0 10px 40px rgba(27, 43, 75, 0.06)",
       },
     },
   },

@@ -36,10 +36,10 @@ export default function HowItWorks() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-20">
-          <span className="px-4 py-1.5 bg-primary text-white text-xs font-bold rounded-full uppercase tracking-wider">
+          <span className="px-4 py-1.5 bg-primary/5 border border-primary/10 text-primary text-xs font-bold rounded-none uppercase tracking-wider">
             HOW IT WORKS
           </span>
-          <h2 className="text-4xl md:text-5xl font-black text-brandNavy tracking-tight leading-tight mt-6">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-brandNavy tracking-tight leading-tight mt-6">
             From Booking to Learning in 3 Simple Steps
           </h2>
         </div>
@@ -65,7 +65,7 @@ export default function HowItWorks() {
                 initial={{ pathLength: 0 }}
                 whileInView={{ pathLength: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 1.5, ease: "linear", delay: 0.3 }}
+                transition={{ duration: 2.0, ease: "easeInOut", delay: 0.3 }}
               />
             </svg>
           </div>
@@ -77,26 +77,26 @@ export default function HowItWorks() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.2 }}
+              transition={{ duration: 1.0, delay: idx * 0.2, ease: "easeInOut" }}
               className="flex flex-col items-center text-center relative z-10 group"
             >
               {/* Step Circle with Icon */}
               <div className="relative mb-6">
                 {/* Step number badge */}
-                <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm shadow-premium border border-white">
+                <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary text-white rounded-none flex items-center justify-center font-bold text-sm shadow-premium border border-white">
                   {step.number}
                 </div>
                 {/* Circle Wrapper */}
                 <motion.div
-                  whileHover={{ scale: 1.05, rotate: 5 }}
-                  className="w-24 h-24 rounded-3xl bg-white border border-primary/10 flex items-center justify-center shadow-premium group-hover:border-primary/30 transition-colors"
+                  whileHover={{ y: -4 }}
+                  className="w-24 h-24 rounded-none bg-white border border-primary/10 flex items-center justify-center shadow-premium group-hover:border-primary/30 transition-all duration-300"
                 >
                   {step.icon}
                 </motion.div>
               </div>
 
               {/* Text details */}
-              <h3 className="text-xl font-bold text-brandNavy mb-3 group-hover:text-primary transition-colors">
+              <h3 className="text-xl font-serif font-bold text-brandNavy mb-3 group-hover:text-primary transition-colors">
                 {step.title}
               </h3>
               <p className="text-textSecondary text-sm md:text-[15px] leading-relaxed max-w-xs font-normal">

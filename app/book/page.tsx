@@ -33,7 +33,6 @@ function BookingForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate API request and trigger success state
     setIsSubmitted(true);
   };
 
@@ -48,12 +47,12 @@ function BookingForm() {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 15 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+    hidden: { opacity: 0, y: 10 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeInOut" as const } },
   };
 
   return (
-    <div className="w-full max-w-xl mx-auto bg-white rounded-3xl border border-primary/5 shadow-premium overflow-hidden relative">
+    <div className="w-full max-w-xl mx-auto bg-white rounded-none border border-primary/5 shadow-premium overflow-hidden relative">
       {/* Top Banner Accent */}
       <div className="h-3 bg-gradient-to-r from-primary to-accent" />
 
@@ -61,7 +60,7 @@ function BookingForm() {
       {isSubmitted ? (
         <div className="p-8 md:p-12 flex flex-col items-center justify-center text-center min-h-[450px] space-y-6">
           {/* Animated checkmark container */}
-          <div className="w-24 h-24 rounded-full bg-primary-light flex items-center justify-center text-primary relative">
+          <div className="w-24 h-24 rounded-none bg-primary-light flex items-center justify-center text-primary relative">
             <svg
               className="w-16 h-16 overflow-visible"
               viewBox="0 0 52 52"
@@ -78,13 +77,13 @@ function BookingForm() {
                 fill="none"
                 initial={{ pathLength: 0 }}
                 animate={{ pathLength: 1 }}
-                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+                transition={{ duration: 0.8, ease: "easeInOut", delay: 0.1 }}
               />
             </svg>
           </div>
 
           <div className="space-y-3">
-            <h2 className="text-3xl font-black text-brandNavy tracking-tight">
+            <h2 className="text-3xl font-serif font-bold text-brandNavy tracking-tight">
               Request Received!
             </h2>
             <p className="text-textSecondary leading-relaxed max-w-sm font-normal">
@@ -95,7 +94,7 @@ function BookingForm() {
           <div className="pt-6 w-full max-w-xs">
             <button
               onClick={() => setIsSubmitted(false)}
-              className="w-full py-3 border-2 border-primary text-primary font-bold rounded-full hover:bg-primary-light transition-all text-sm"
+              className="w-full py-3 border-2 border-primary text-primary font-semibold rounded-none hover:bg-primary-light transition-all text-sm"
             >
               Request Another Session
             </button>
@@ -106,10 +105,10 @@ function BookingForm() {
         <div className="p-8 md:p-12">
           {/* Form Header */}
           <div className="text-center mb-8 space-y-2">
-            <span className="px-4 py-1.5 bg-primary/10 border border-primary/20 text-primary text-xs font-bold rounded-full uppercase tracking-wider">
+            <span className="px-4 py-1.5 bg-primary/5 border border-primary/10 text-primary text-xs font-bold rounded-none uppercase tracking-wider">
               BOOK A SESSION
             </span>
-            <h1 className="text-3xl font-black text-brandNavy tracking-tight pt-3">
+            <h1 className="text-3xl font-serif font-bold text-brandNavy tracking-tight pt-3">
               Request Your Session
             </h1>
             <p className="text-xs text-textSecondary font-semibold uppercase tracking-wider">
@@ -137,7 +136,7 @@ function BookingForm() {
                     type="text"
                     required
                     placeholder="Enter your name"
-                    className="w-full pl-11 pr-4 py-3 bg-pageBg border border-primary/5 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary text-sm font-medium transition-all"
+                    className="w-full pl-11 pr-4 py-3 bg-pageBg border border-primary/5 rounded-none focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary text-sm font-medium transition-all"
                   />
                 </div>
               </motion.div>
@@ -155,7 +154,7 @@ function BookingForm() {
                     type="email"
                     required
                     placeholder="example@mail.com"
-                    className="w-full pl-11 pr-4 py-3 bg-pageBg border border-primary/5 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary text-sm font-medium transition-all"
+                    className="w-full pl-11 pr-4 py-3 bg-pageBg border border-primary/5 rounded-none focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary text-sm font-medium transition-all"
                   />
                 </div>
               </motion.div>
@@ -173,7 +172,7 @@ function BookingForm() {
                     type="tel"
                     required
                     placeholder="010-XXXX-XXXX"
-                    className="w-full pl-11 pr-4 py-3 bg-pageBg border border-primary/5 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary text-sm font-medium transition-all"
+                    className="w-full pl-11 pr-4 py-3 bg-pageBg border border-primary/5 rounded-none focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary text-sm font-medium transition-all"
                   />
                 </div>
               </motion.div>
@@ -190,7 +189,7 @@ function BookingForm() {
                   <select
                     value={classType}
                     onChange={(e) => setClassType(e.target.value)}
-                    className="w-full pl-11 pr-4 py-3 bg-pageBg border border-primary/5 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary text-sm font-medium appearance-none transition-all"
+                    className="w-full pl-11 pr-4 py-3 bg-pageBg border border-primary/5 rounded-none focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary text-sm font-medium appearance-none transition-all"
                   >
                     <option value="one-on-one">One-on-One Tutoring</option>
                     <option value="group">Group Classes</option>
@@ -210,7 +209,7 @@ function BookingForm() {
                   <input
                     type="date"
                     required
-                    className="w-full pl-11 pr-4 py-3 bg-pageBg border border-primary/5 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary text-sm font-medium transition-all"
+                    className="w-full pl-11 pr-4 py-3 bg-pageBg border border-primary/5 rounded-none focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary text-sm font-medium transition-all"
                   />
                 </div>
               </motion.div>
@@ -231,7 +230,7 @@ function BookingForm() {
                         ? `I am interested in sessions with ${selectedTutor}...`
                         : "Describe the student's level or specific requests..."
                     }
-                    className="w-full pl-11 pr-4 py-3 bg-pageBg border border-primary/5 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary text-sm font-medium transition-all resize-none"
+                    className="w-full pl-11 pr-4 py-3 bg-pageBg border border-primary/5 rounded-none focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary text-sm font-medium transition-all resize-none"
                   />
                 </div>
               </motion.div>
@@ -240,10 +239,10 @@ function BookingForm() {
               {selectedTutor && (
                 <motion.div
                   variants={itemVariants}
-                  className="p-3 bg-primary-light rounded-xl border border-primary/10 flex items-center justify-between text-xs"
+                  className="p-3 bg-primary-light rounded-none border border-primary/10 flex items-center justify-between text-xs"
                 >
                   <span className="font-semibold text-textSecondary">Preferred Teacher</span>
-                  <span className="font-bold text-primary px-2.5 py-0.5 bg-white border border-primary/10 rounded-full">
+                  <span className="font-bold text-primary px-2.5 py-0.5 bg-white border border-primary/10 rounded-none">
                     {selectedTutor}
                   </span>
                 </motion.div>
@@ -253,7 +252,7 @@ function BookingForm() {
               <motion.div variants={itemVariants} className="pt-2">
                 <button
                   type="submit"
-                  className="w-full py-4 bg-primary text-white font-bold rounded-full shadow-premium hover:bg-opacity-95 hover:shadow-premiumHover transition-all text-sm uppercase tracking-wider"
+                  className="w-full py-4 bg-primary text-white font-semibold rounded-none border border-primary hover:bg-[#253A60] transition-colors duration-300 text-sm uppercase tracking-wider"
                 >
                   Request a Session
                 </button>
@@ -280,7 +279,7 @@ export default function BookingPage() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <Suspense fallback={
-          <div className="w-full max-w-xl mx-auto p-12 bg-white rounded-3xl border border-primary/5 shadow-premium flex items-center justify-center min-h-[450px]">
+          <div className="w-full max-w-xl mx-auto p-12 bg-white rounded-none border border-primary/5 shadow-premium flex items-center justify-center min-h-[450px]">
             <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-primary" />
           </div>
         }>

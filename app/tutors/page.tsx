@@ -17,13 +17,13 @@ export default function TutorsGridPage() {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     show: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
-        ease: [0.16, 1, 0.3, 1] as const, // easeOutExpo: snappy & cinematic
+        duration: 1.0,
+        ease: "easeInOut" as const,
       },
     },
   };
@@ -38,10 +38,10 @@ export default function TutorsGridPage() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-6">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.4 }}
-            className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-primary/10 border border-primary/20 text-primary text-xs font-bold rounded-full uppercase tracking-wider"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+            className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-primary/5 border border-primary/10 text-primary text-xs font-bold rounded-none uppercase tracking-wider"
           >
             Our Team
           </motion.div>
@@ -49,8 +49,8 @@ export default function TutorsGridPage() {
           <motion.h1
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl md:text-5xl font-black text-brandNavy tracking-tight"
+            transition={{ duration: 1.0, ease: "easeInOut", delay: 0.1 }}
+            className="text-4xl md:text-5xl font-serif font-bold text-brandNavy tracking-tight"
           >
             Meet Our Professional Tutors
           </motion.h1>
@@ -58,7 +58,7 @@ export default function TutorsGridPage() {
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 1.0, ease: "easeInOut", delay: 0.2 }}
             className="text-textSecondary text-base md:text-lg leading-relaxed font-normal"
           >
             Our native-level teachers are fully dedicated to providing structured lessons that build real confidence. Click on a tutor to view their full profile and video introduction.

@@ -9,7 +9,7 @@ import { Menu, X, Sparkles, Palette } from "lucide-react";
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [theme, setTheme] = useState<"purple" | "emerald" | "blue">("purple");
+  const [theme, setTheme] = useState<"oxford" | "cambridge">("oxford");
   const pathname = usePathname();
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function Navbar() {
 
   // Sync theme with localStorage and DOM class list
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") as "purple" | "emerald" | "blue" | null;
+    const savedTheme = localStorage.getItem("theme") as "oxford" | "cambridge" | null;
     if (savedTheme) {
       setTheme(savedTheme);
     }
@@ -34,7 +34,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const root = document.documentElement;
-    root.classList.remove("theme-purple", "theme-emerald", "theme-blue");
+    root.classList.remove("theme-purple", "theme-emerald", "theme-blue", "theme-oxford", "theme-cambridge");
     root.classList.add(`theme-${theme}`);
     localStorage.setItem("theme", theme);
   }, [theme]);
@@ -46,9 +46,8 @@ export default function Navbar() {
   ];
 
   const themes = [
-    { id: "purple", color: "bg-[#7C3AED]", name: "Royal Purple" },
-    { id: "emerald", color: "bg-[#0D9488]", name: "Deep Emerald" },
-    { id: "blue", color: "bg-[#2563EB]", name: "Ocean Blue" }
+    { id: "oxford", color: "bg-[#FFFFFF] border border-primary/20", name: "Oxford White" },
+    { id: "cambridge", color: "bg-[#FAFAF7] border border-primary/20", name: "Cambridge Cream" }
   ] as const;
 
   const handleLinkClick = () => {
@@ -69,7 +68,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2 group">
-          <span className="text-2xl font-sans font-black text-primary tracking-tight transition-transform duration-300 group-hover:scale-[1.02] flex items-center gap-1.5">
+          <span className="text-2xl font-serif font-bold text-primary tracking-tight transition-transform duration-300 group-hover:scale-[1.02] flex items-center gap-1.5">
             David & Blair
             <Sparkles className="w-5 h-5 text-accent animate-pulse" />
           </span>
