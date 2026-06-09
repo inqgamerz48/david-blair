@@ -141,14 +141,24 @@ export default function Navbar() {
         <div className="md:hidden flex items-center">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="text-textPrimary hover:text-primary focus:outline-none transition-colors"
+            className="w-12 h-12 flex items-center justify-center text-textPrimary hover:text-primary focus:outline-none transition-colors rounded-none"
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={mobileMenuOpen ? "open" : "closed"}
+                initial={{ rotate: -45, opacity: 0 }}
+                animate={{ rotate: 0, opacity: 1 }}
+                exit={{ rotate: 45, opacity: 0 }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+              >
+                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </motion.div>
+            </AnimatePresence>
           </button>
         </div>
       </div>
-
+ 
       {/* Mobile Navigation Menu Dropdown */}
       <AnimatePresence>
         {mobileMenuOpen && (
@@ -159,34 +169,40 @@ export default function Navbar() {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="md:hidden glass-nav border-t border-primary/5 bg-white/95"
           >
-            <div className="px-6 py-6 flex flex-col space-y-4">
+            <div className="px-6 py-6 flex flex-col space-y-5">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
                 return (
-                  <Link
+                  <motion.div
                     key={link.href}
-                    href={link.href}
-                    onClick={handleLinkClick}
-                    className={`text-lg font-medium py-1 transition-colors ${
-                      isActive ? "text-primary font-bold" : "text-textSecondary"
-                    }`}
+                    whileTap={{ scale: 0.97 }}
+                    className="w-full"
                   >
-                    {link.name}
-                  </Link>
+                    <Link
+                      href={link.href}
+                      onClick={handleLinkClick}
+                      className={`text-lg font-medium py-1.5 block transition-colors ${
+                        isActive ? "text-primary font-bold" : "text-textSecondary"
+                      }`}
+                    >
+                      {link.name}
+                    </Link>
+                  </motion.div>
                 );
               })}
-
+ 
               {/* Mobile Theme Selector Toggler */}
-              <div className="py-2 border-t border-primary/5 flex items-center justify-between">
-                <span className="text-sm font-semibold text-textSecondary flex items-center gap-1.5">
-                  <Palette className="w-4 h-4" /> Select Theme
+              <div className="py-3 border-t border-primary/5 flex items-center justify-between">
+                <span className="text-[15px] font-semibold text-textSecondary flex items-center gap-1.5">
+                  <Palette className="w-4 h-4" /> Theme
                 </span>
-                <div className="flex gap-2">
+                <div className="flex gap-3">
                   {themes.map((t) => (
-                    <button
+                    <motion.button
                       key={t.id}
                       onClick={() => setTheme(t.id)}
-                      className={`w-6 h-6 rounded-none ${t.color} relative flex items-center justify-center ${
+                      whileTap={{ scale: 0.9 }}
+                      className={`w-10 h-10 rounded-none ${t.color} relative flex items-center justify-center cursor-pointer ${
                         theme === t.id ? "ring-2 ring-primary ring-offset-2" : ""
                       }`}
                       aria-label={`Switch to ${t.name}`}
@@ -194,12 +210,14 @@ export default function Navbar() {
                   ))}
                 </div>
               </div>
-
-              <Link href="/book" onClick={handleLinkClick} className="w-full pt-2">
-                <button className="w-full py-3 bg-primary text-white font-semibold rounded-none border border-primary shadow-premium hover:bg-[#253A60] transition-colors duration-300">
-                  Book a Session
-                </button>
-              </Link>
+ 
+              <motion.div whileTap={{ scale: 0.98 }} className="w-full pt-2">
+                <Link href="/book" onClick={handleLinkClick}>
+                  <button className="w-full py-3.5 bg-primary text-white font-semibold rounded-none border border-primary shadow-premium hover:bg-[#253A60] transition-colors duration-300">
+                    Book a Session
+                  </button>
+                </Link>
+              </motion.div>
             </div>
           </motion.div>
         )}

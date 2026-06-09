@@ -70,7 +70,7 @@ function BookingForm() {
 
       {/* Success View */}
       {isSubmitted ? (
-        <div className="p-8 md:p-12 flex flex-col items-center justify-center text-center min-h-[450px] space-y-6 relative z-10">
+        <div className="p-6 md:p-12 flex flex-col items-center justify-center text-center min-h-[400px] space-y-6 relative z-10">
           {/* Animated checkmark container */}
           <div className="w-24 h-24 rounded-none bg-primary-light flex items-center justify-center text-primary relative">
             <svg
@@ -114,7 +114,7 @@ function BookingForm() {
         </div>
       ) : (
         /* Form View */
-        <div className="p-8 md:p-12 relative z-10">
+        <div className="p-6 md:p-12 relative z-10">
           {/* Form Header */}
           <div className="text-center mb-8 space-y-2">
             <span className="px-4 py-1.5 bg-primary/5 border border-primary/10 text-primary text-xs font-bold rounded-none uppercase tracking-wider">
@@ -148,7 +148,7 @@ function BookingForm() {
                     type="text"
                     required
                     placeholder="Enter your name"
-                    className="w-full pl-11 pr-4 py-3 bg-pageBg border border-primary/5 rounded-none focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary text-sm font-medium transition-all"
+                    className="w-full pl-11 pr-4 py-3 bg-pageBg border border-primary/5 rounded-none focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary text-base md:text-sm font-medium transition-all"
                   />
                 </div>
               </motion.div>
@@ -166,7 +166,7 @@ function BookingForm() {
                     type="email"
                     required
                     placeholder="example@mail.com"
-                    className="w-full pl-11 pr-4 py-3 bg-pageBg border border-primary/5 rounded-none focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary text-sm font-medium transition-all"
+                    className="w-full pl-11 pr-4 py-3 bg-pageBg border border-primary/5 rounded-none focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary text-base md:text-sm font-medium transition-all"
                   />
                 </div>
               </motion.div>
@@ -184,7 +184,7 @@ function BookingForm() {
                     type="tel"
                     required
                     placeholder="010-XXXX-XXXX"
-                    className="w-full pl-11 pr-4 py-3 bg-pageBg border border-primary/5 rounded-none focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary text-sm font-medium transition-all"
+                    className="w-full pl-11 pr-4 py-3 bg-pageBg border border-primary/5 rounded-none focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary text-base md:text-sm font-medium transition-all"
                   />
                 </div>
               </motion.div>
@@ -201,7 +201,7 @@ function BookingForm() {
                   <select
                     value={classType}
                     onChange={(e) => setClassType(e.target.value)}
-                    className="w-full pl-11 pr-4 py-3 bg-pageBg border border-primary/5 rounded-none focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary text-sm font-medium appearance-none transition-all"
+                    className="w-full pl-11 pr-4 py-3 bg-pageBg border border-primary/5 rounded-none focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary text-base md:text-sm font-medium appearance-none transition-all"
                   >
                     <option value="one-on-one">One-on-One Tutoring</option>
                     <option value="group">Group Classes</option>
@@ -221,7 +221,7 @@ function BookingForm() {
                   <input
                     type="date"
                     required
-                    className="w-full pl-11 pr-4 py-3 bg-pageBg/50 border border-primary/10 rounded-none focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary text-sm font-medium transition-all custom-datepicker cursor-pointer"
+                    className="w-full pl-11 pr-4 py-3 bg-pageBg/50 border border-primary/10 rounded-none focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary text-base md:text-sm font-medium transition-all custom-datepicker cursor-pointer"
                   />
                 </div>
               </motion.div>
@@ -242,7 +242,7 @@ function BookingForm() {
                         ? `I am interested in sessions with ${selectedTutor}...`
                         : "Describe the student's level or specific requests..."
                     }
-                    className="w-full pl-11 pr-4 py-3 bg-pageBg border border-primary/5 rounded-none focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary text-sm font-medium transition-all resize-none"
+                    className="w-full pl-11 pr-4 py-3 bg-pageBg border border-primary/5 rounded-none focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary text-base md:text-sm font-medium transition-all resize-none"
                   />
                 </div>
               </motion.div>
@@ -291,7 +291,7 @@ export default function BookingPage() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <Suspense fallback={
-          <div className="w-full max-w-xl mx-auto p-12 bg-white rounded-none border border-primary/5 shadow-premium flex items-center justify-center min-h-[450px]">
+          <div className="w-full max-w-xl mx-auto p-6 md:p-12 bg-white rounded-none border border-primary/5 shadow-premium flex items-center justify-center min-h-[400px]">
             <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-primary" />
           </div>
         }>

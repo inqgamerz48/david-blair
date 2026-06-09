@@ -19,15 +19,15 @@ export default function Footer() {
             <p className="text-[14px] text-gray-400 leading-relaxed font-normal">
               World-class English tutoring based in Korea. Elevating language confidence through personalized, results-driven coaching.
             </p>
-            <div className="flex items-center space-x-4 pt-2">
-              <a href="#" className="w-8 h-8 rounded-none bg-white/5 flex items-center hover:bg-accent/20 hover:text-white transition-colors duration-200 justify-center text-gray-400" aria-label="Instagram">
+            <div className="flex items-center space-x-3 pt-2">
+              <a href="#" className="w-11 h-11 rounded-none bg-white/5 flex items-center hover:bg-accent/20 hover:text-white transition-colors duration-200 justify-center text-gray-400" aria-label="Instagram">
                 <svg className="w-4 h-4 fill-none stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
                   <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
                   <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
                 </svg>
               </a>
-              <a href="#" className="w-8 h-8 rounded-none bg-white/5 flex items-center hover:bg-accent/20 hover:text-white transition-colors duration-200 justify-center text-gray-400" aria-label="LinkedIn">
+              <a href="#" className="w-11 h-11 rounded-none bg-white/5 flex items-center hover:bg-accent/20 hover:text-white transition-colors duration-200 justify-center text-gray-400" aria-label="LinkedIn">
                 <svg className="w-4 h-4 fill-none stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
                   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
                   <rect width="4" height="12" x="2" y="9"/>

@@ -54,6 +54,20 @@ body {
   animation: blob-float-2 30s infinite ease-in-out;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .blob-slow-float-1,
+  .blob-slow-float-2 {
+    animation: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .blob-slow-float-1,
+  .blob-slow-float-2 {
+    display: none !important; /* Performance optimization for mobile */
+  }
+}
+
 @keyframes blob-float-1 {
   0%, 100% {
     transform: translate(0px, 0px) scale(1);

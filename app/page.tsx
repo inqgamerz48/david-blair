@@ -87,7 +87,7 @@ export default function Homepage() {
             </div>
             
             {/* Elegant Serif Headline */}
-            <h1 className="text-5xl md:text-[60px] font-serif font-bold text-brandNavy leading-tight tracking-tight max-w-2xl">
+            <h1 className="text-4xl sm:text-5xl md:text-[60px] font-serif font-bold text-brandNavy leading-tight tracking-tight max-w-2xl">
               Build Real English Confidence <span className="text-accent">One Session at a Time</span>
             </h1>
 
@@ -123,9 +123,9 @@ export default function Homepage() {
             className="lg:col-span-5 relative flex justify-center"
           >
             {/* Visual Frame wrapper */}
-            <div className="relative w-80 h-96 md:w-96 md:h-[450px]">
+            <div className="relative w-72 h-80 sm:w-80 sm:h-96 md:w-96 md:h-[450px]">
               {/* Outer floating traditional border frame */}
-              <div className="absolute inset-0 bg-transparent rounded-none border-2 border-accent/30 translate-x-4 translate-y-4 pointer-events-none" />
+              <div className="absolute inset-0 bg-transparent rounded-none border-2 border-accent/30 translate-x-2 translate-y-2 sm:translate-x-4 sm:translate-y-4 pointer-events-none" />
               
               {/* Main content box holding the generated tutor image */}
               <div className="absolute inset-0 bg-white rounded-none border-2 border-primary shadow-premium relative overflow-hidden group">
@@ -153,8 +153,8 @@ export default function Homepage() {
       </section>
 
       {/* ================= ABOUT SECTION ================= */}
-      <section className="py-24 bg-pageBg relative">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+      <section className="py-16 md:py-24 bg-pageBg relative">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Left Column: Traditional Frame visual */}
           <motion.div
@@ -164,8 +164,8 @@ export default function Homepage() {
             transition={{ duration: 1.0, ease: "easeInOut" }}
             className="lg:col-span-5 flex justify-center"
           >
-            <div className="w-80 h-96 md:w-90 md:h-96 rounded-none border-2 border-dashed border-primary/20 flex items-center justify-center p-6 relative">
-              <div className="absolute inset-4 bg-[#FAFAF7] rounded-none border border-primary/10 flex flex-col items-center justify-center text-center p-8">
+            <div className="w-full max-w-[280px] h-80 sm:w-80 sm:h-96 md:w-90 md:h-96 rounded-none border-2 border-dashed border-primary/20 flex items-center justify-center p-6 relative">
+              <div className="absolute inset-4 bg-[#FAFAF7] rounded-none border border-primary/10 flex flex-col items-center justify-center text-center p-6 sm:p-8">
                 <Compass className="w-12 h-12 text-primary mb-4" />
                 <h4 className="text-xl font-serif font-bold text-brandNavy mb-2">Our Philosophy</h4>
                 <p className="text-xs text-textSecondary leading-relaxed">
@@ -225,7 +225,7 @@ export default function Homepage() {
       </section>
 
       {/* ================= CLASSES SECTION ================= */}
-      <section className="py-24 bg-altBg relative">
+      <section className="py-16 md:py-24 bg-altBg relative">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           
           <div className="text-center max-w-2xl mx-auto mb-16">
@@ -306,7 +306,7 @@ export default function Homepage() {
       </section>
 
       {/* ================= TUTORS SECTION ================= */}
-      <section className="py-24 bg-pageBg relative">
+      <section className="py-16 md:py-24 bg-pageBg relative">
         {/* Subtle decorative grid lines */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(27,43,75,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(27,43,75,0.015)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 

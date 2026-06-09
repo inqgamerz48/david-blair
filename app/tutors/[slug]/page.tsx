@@ -57,7 +57,7 @@ export default function TutorProfilePage({ params }: TutorProfileProps) {
           {/* Top Banner Accent */}
           <div className="h-4 bg-gradient-to-r from-primary to-accent" />
           
-          <div className="p-8 md:p-12 grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+          <div className="p-6 md:p-12 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
             
             {/* Avatar Column */}
             <div className="md:col-span-4 flex flex-col items-center text-center">
@@ -128,7 +128,7 @@ export default function TutorProfilePage({ params }: TutorProfileProps) {
         </div>
 
         {/* Video Placeholder Section */}
-        <div className="bg-white rounded-none border border-primary/5 p-8 md:p-12 shadow-premium mb-12">
+        <div className="bg-white rounded-none border border-primary/5 p-6 md:p-12 shadow-premium mb-12">
           <h2 className="text-2xl font-serif font-bold text-brandNavy mb-6">Video Introduction</h2>
           
           <div className="relative aspect-video w-full max-w-4xl mx-auto rounded-none overflow-hidden bg-brandNavy flex flex-col items-center justify-center group border border-white/10 shadow-lg">
@@ -158,7 +158,7 @@ export default function TutorProfilePage({ params }: TutorProfileProps) {
 
         {/* Testimonials Section */}
         {tutor.testimonials.length > 0 && (
-          <div className="bg-white rounded-none border border-primary/5 p-8 md:p-12 shadow-premium">
+          <div className="bg-white rounded-none border border-primary/5 p-6 md:p-12 shadow-premium">
             <h2 className="text-2xl font-serif font-bold text-brandNavy mb-8">Tutor Testimonials</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

@@ -33,6 +33,7 @@ export default function TutorCard({ tutor, index }: TutorCardProps) {
       viewport={{ once: true }}
       transition={{ duration: 0.8, delay: index * 0.1, ease: "easeInOut" }}
       whileHover={{ y: -6 }}
+      whileTap={{ scale: 0.98 }}
       className="bg-white rounded-none p-8 border border-primary/5 shadow-premium shadow-premium-box flex flex-col items-center text-center relative overflow-hidden group"
     >
       {/* Background shape hover reveal */}
@@ -74,15 +75,23 @@ export default function TutorCard({ tutor, index }: TutorCardProps) {
 
       {/* Footer / Socials & Profile Link */}
       <div className="flex items-center justify-between w-full mt-auto pt-4 border-t border-primary/5">
-        <div className="flex space-x-3 text-textSecondary">
-          <a href="#" className="hover:text-primary transition-colors duration-200" aria-label="Instagram">
+        <div className="flex -ml-2 text-textSecondary">
+          <a
+            href="#"
+            className="w-11 h-11 flex items-center justify-center hover:bg-primary/5 hover:text-primary transition-colors duration-200"
+            aria-label="Instagram"
+          >
             <svg className="w-4 h-4 fill-none stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
               <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
               <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
               <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
             </svg>
           </a>
-          <a href="#" className="hover:text-primary transition-colors duration-200" aria-label="LinkedIn">
+          <a
+            href="#"
+            className="w-11 h-11 flex items-center justify-center hover:bg-primary/5 hover:text-primary transition-colors duration-200"
+            aria-label="LinkedIn"
+          >
             <svg className="w-4 h-4 fill-none stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
               <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
               <rect width="4" height="12" x="2" y="9"/>
@@ -92,7 +101,7 @@ export default function TutorCard({ tutor, index }: TutorCardProps) {
         </div>
         <Link
           href={`/tutors/${tutor.slug}`}
-          className="text-sm font-bold text-primary hover:text-accent flex items-center gap-0.5 transition-colors group/link"
+          className="text-sm font-bold text-primary hover:text-accent flex items-center gap-0.5 transition-colors group/link py-2 px-1"
         >
           View Profile
           <ArrowUpRight className="w-4 h-4 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
